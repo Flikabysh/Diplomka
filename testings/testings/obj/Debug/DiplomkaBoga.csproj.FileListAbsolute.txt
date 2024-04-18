@@ -1,0 +1,11 @@
+C:\Users\Драйвер\source\repos\testings\testings\bin\Debug\testings.exe.config
+C:\Users\Драйвер\source\repos\testings\testings\bin\Debug\testings.exe
+C:\Users\Драйвер\source\repos\testings\testings\bin\Debug\testings.pdb
+C:\Users\Драйвер\source\repos\testings\testings\obj\Debug\DiplomkaBoga.csproj.AssemblyReference.cache
+C:\Users\Драйвер\source\repos\testings\testings\obj\Debug\diplomatik.Form1.resources
+C:\Users\Драйвер\source\repos\testings\testings\obj\Debug\testings.Properties.Resources.resources
+C:\Users\Драйвер\source\repos\testings\testings\obj\Debug\DiplomkaBoga.csproj.GenerateResource.cache
+C:\Users\Драйвер\source\repos\testings\testings\obj\Debug\DiplomkaBoga.csproj.CoreCompileInputs.cache
+C:\Users\Драйвер\source\repos\testings\testings\obj\Debug\testings.exe
+C:\Users\Драйвер\source\repos\testings\testings\obj\Debug\testings.pdb
+C:\Users\Драйвер\source\repos\testings\testings\obj\Debug\diplomatik.Podtverit.resources
