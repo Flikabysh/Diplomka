@@ -99,7 +99,7 @@ namespace diplomatik
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(137, 303);
+            this.label2.Location = new System.Drawing.Point(139, 303);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(300, 22);
             this.label2.TabIndex = 5;
@@ -108,16 +108,17 @@ namespace diplomatik
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(223, 338);
+            this.label3.Location = new System.Drawing.Point(254, 338);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 22);
+            this.label3.Size = new System.Drawing.Size(71, 22);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Скоро будет...";
+            this.label3.Text = "ВОЙТИ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(159, 208);
+            this.checkBox1.Location = new System.Drawing.Point(159, 211);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(168, 26);
             this.checkBox1.TabIndex = 7;

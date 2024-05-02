@@ -8,9 +8,6 @@ namespace diplomatik
         public Form1()
         {
             InitializeComponent();
-
-            MessageBox.Show("Для начала использования нашего приложения, вам нужно пройти регистрацию/вход",
-                "Добро пожаловать!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
         }
 
@@ -77,7 +74,7 @@ namespace diplomatik
             Podtverit.pssw = textBox2.Text;
 
             Podtverit frm = new Podtverit();
-            frm.ShowDialog();
+            frm.Show();
         }
         
         private void textBox1_Click(object sender, EventArgs e)
@@ -127,6 +124,14 @@ namespace diplomatik
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Podtverit.vx = true;
+            Vxodit ff = new Vxodit();
+            ff.Show();
+            this.Hide();
         }
     }
 }

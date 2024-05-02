@@ -12,12 +12,14 @@ namespace diplomatik
         public static string lg;
         public static string pssw;
         public static string email;
+        public static bool vx;
 
         int m = 0, s = 0;
         string[] Rur = new string[6];
         Random rannd = new Random();
         int cho = 0;
 
+        bool vxodims = Podtverit.vx;
         string tyr = Podtverit.email;
         string vyr = Podtverit.lg;
         string myr = Podtverit.pssw;
@@ -81,7 +83,12 @@ namespace diplomatik
                 {
                     mailMessage.From = new MailAddress(smtpUsername);
                     mailMessage.To.Add(email);
+                    if(vxodims == false)
                     mailMessage.Subject = "Здравствуйте, " + lg + "!";
+                    else
+                    {
+                        mailMessage.Subject = "С возвращением, Пользователь!";
+                    }
                     mailMessage.Body = $"Ваш проверочный код для сервиса СЛОБОДАН: \r\n{far} \r\n " +
                         $" \r\n" +
                         $"Если вы ничего не делали, то просто проигнорируйте";
@@ -106,15 +113,6 @@ namespace diplomatik
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cho++;
-            if (cho == 6)
-            {
-                button1.Enabled = false;
-                MessageBox.Show("Слишком много попыток ", "Внимание!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             string bur = Convert.ToString(textBox1.Text) + Convert.ToString(textBox2.Text) +
                 Convert.ToString(textBox3.Text) + Convert.ToString(textBox4.Text) +
                 Convert.ToString(textBox5.Text) + Convert.ToString(textBox6.Text);
@@ -130,9 +128,13 @@ namespace diplomatik
                 }
             }
 
-            if (far == bur)
+            if (far == bur & vxodims == false)
             { 
                 Registriki(vyr, myr, tyr);
+            }
+            else if (far == bur & vxodims == true)
+            {
+                Vxod(vyr, tyr);
             }
             else
             {
@@ -141,13 +143,65 @@ namespace diplomatik
                 return;
             }
         }
+
+        private void Vxod(string myr, string tyr)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source = Chmonik\FUKI; Initial Catalog = DBotBoga; Integrated Security = True");
+                con.Open();
+                SqlCommand command = new SqlCommand("select password, email from [dbo].[TDB] where password = @Pass and email = @Email", con);
+                command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = myr;
+                command.Parameters.Add("@Email", SqlDbType.VarChar).Value = tyr;
+                command.ExecuteNonQuery();
+                //DataSend.text = vyr;
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так: " + ex.ToString());
+                return;
+            }
+            MainForm frm = new MainForm();
+            frm.Show();
+            
+            testings.Properties.Settings.Default.voshol = true;
+            testings.Properties.Settings.Default.Save();
+
+            MessageBox.Show("Перезапустите приложение для дальнейшей работы", "Внимание!");
+            Application.Exit();
+        }
+        
         private void Registriki(string vyr, string myr, string tyr)
         {
-            HashParola cho = new HashParola();
-            string query = $"Insert into TDB(login, password, email) values('{vyr}', '{cho.Hash(myr)}', '{tyr}')";
+            try
+            {
+                SqlConnection con = new SqlConnection(@"Data Source = CHMONIK\FUKI; Initial Catalog = DBotBoga; Integrated Security = True");
+                con.Open();
+                SqlCommand command = new SqlCommand("INSERT INTO [dbo].[TDB] (login, password, email) VALUES (@Log, @Pass, @Email)", con);
+                command.Parameters.Add("@Log", SqlDbType.VarChar).Value = vyr;
+                command.Parameters.Add("@Pass", SqlDbType.VarChar).Value = myr;
+                command.Parameters.Add("@Email", SqlDbType.VarChar).Value = tyr;
+                command.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Новый пользователь добавлен!");
 
-            var dbquery = new DataBaseFUX();
-            dbquery.queryExecute(query);
+                MainForm frm = new MainForm();
+                frm.Show();
+                
+                testings.Properties.Settings.Default.voshol = true;
+                testings.Properties.Settings.Default.Save();
+
+                MessageBox.Show("Перезапустите приложение для дальнейшей работы", "Внимание!");
+                Application.Exit();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Что-то пошло не так: " + ex.ToString());
+                return;
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
