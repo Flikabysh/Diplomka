@@ -47,8 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CodeValidation.cs" />
-    <Compile Include="DataBaseFUX.cs" />
-    <Compile Include="HashParola.cs" />
+    <Compile Include="Kykrinis.cs" />
     <Compile Include="LoginValidation.cs" />
     <Compile Include="PasswordValidation.cs" />
     <Compile Include="Podtverit.cs">
@@ -56,6 +55,29 @@
     </Compile>
     <Compile Include="Podtverit.Designer.cs">
       <DependentUpon>Podtverit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Biletiki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Biletiki.Designer.cs">
+      <DependentUpon>Biletiki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resursiki.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resursiki.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Vxodit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\Vxodit.Designer.cs">
+      <DependentUpon>Vxodit.cs</DependentUpon>
     </Compile>
     <Compile Include="Registratiki.cs">
       <SubType>Form</SubType>
@@ -68,6 +90,19 @@
     <EmbeddedResource Include="Podtverit.resx">
       <DependentUpon>Podtverit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Biletiki.resx">
+      <DependentUpon>Biletiki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resursiki.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resursiki.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Vxodit.resx">
+      <DependentUpon>Vxodit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registratiki.resx">
       <DependentUpon>Registratiki.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -92,6 +128,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2147483648_-213982.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2147483648_-214342.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3c299814ced28385b4c1822421482539.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10b28629b9eaff26acb3c44306e64ed6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\37de7713fd95266011ef7b7c6f4c1898.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\926f97cd21e514589b0454f41fa64c4f.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2147483648_-211155.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\-2147483648_-212665.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-52-01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-52-11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-52-14.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-52-22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-52-26.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-52-30.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-52-34.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-51-48.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-51-54.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-51-56 %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-51-56.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2024-05-21_19-51-59.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

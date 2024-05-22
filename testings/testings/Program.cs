@@ -16,7 +16,14 @@ namespace diplomatik
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            if (testings.Properties.Settings.Default.voshol == false)
+            {
+                Application.Run(new Form1());
+            }
+            else
+            {
+                Application.Run(new MainForm());
+            }
         }
     }
 }
